@@ -18,7 +18,7 @@ const HeroPage=()=> {
 
   useEffect( ()=>{
     const getWeatherData = async () => {
-      const data = await Weather('Chennai');
+      const data = await Weather(location || "Hyderabad");
       setLocation(data.name);
       setCountry(data.sys.country);
       setTemperature(data.main.temp);
@@ -36,6 +36,12 @@ const HeroPage=()=> {
 
 
   return (
+    <>
+
+    <input type='text' placeholder='Search for any city' className='w-60 border-2 border-slate-200 text-slate-50 ml-10 mt-10' onChange={(e)=>{
+      setLocation(e.target.value);
+    }} />
+
     <div className="bg-transparent min-h-screen px-4 py-8">
       <div className="max-w-7xl mx-auto">
         
@@ -154,6 +160,7 @@ const HeroPage=()=> {
 
       </div>
     </div>
+    </>
   );
 }
 

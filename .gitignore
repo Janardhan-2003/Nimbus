@@ -1,0 +1,42 @@
+# =====================
+# Backend
+# =====================
+backend/node_modules/
+backend/.env
+backend/logs
+backend/*.log
+backend/npm-debug.log*
+backend/yarn-debug.log*
+backend/yarn-error.log*
+backend/pnpm-debug.log*
+backend/coverage/
+backend/dist/
+backend/tmp/
+backend/.tmp
+
+# =====================
+# Frontend
+# =====================
+frontend/node_modules/
+frontend/.env
+frontend/build/
+frontend/coverage/
+frontend/.cache/
+frontend/dist/
+frontend/logs
+frontend/*.log
+
+# =====================
+# General
+# =====================
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor settings
+.vscode/
+.idea/
+
+# Optional: ignore lock files if you prefer
+# package-lock.json
+# yarn.lock

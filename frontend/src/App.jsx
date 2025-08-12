@@ -6,7 +6,7 @@ function App() {
   
 
   return (
-    <div className="h-screen bg-[url(assets/earth.jpg)] w-full bg-cover bg-center">
+    <div className="h-full bg-[url(assets/earth.jpg)] w-full bg-cover bg-center">
     <Header />
     <HeroPage />
     <Footer />

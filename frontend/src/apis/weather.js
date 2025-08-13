@@ -10,7 +10,6 @@ export async function Weather(city) {
     return (await response.json())
 
     }catch(error) {
-        console.error('There has been a problem with your fetch operation:', error);
         return null;
     }
 }

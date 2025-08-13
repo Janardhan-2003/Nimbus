@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 import {Weather} from '../../apis/weather';
 import { Cloud, Wind, Eye, Droplets, Thermometer, Gauge } from 'lucide-react';
 
+
 const HeroPage=()=> {
   // Weather data from API
-  const [location, setLocation] = useState(null);
+  const [location, setLocation] = useState("kadapa");
   const [country, setCountry] = useState('IN');
   const [temperature, setTemperature] = useState(0);
   const [feelsLike, setFeelsLike] = useState(0);
@@ -14,11 +15,13 @@ const HeroPage=()=> {
   const [visibility, setVisibility] = useState(0);
   const [pressure, setPressure] = useState(0);
   const [clouds, setClouds] = useState(0);
+  const [error, setError] = useState(null);
 
+   const getWeatherData = async (cityName) => {
+      const data = await Weather(cityName);
 
-  useEffect( ()=>{
-    const getWeatherData = async () => {
-      const data = await Weather(location || "Hyderabad");
+      if(data!==null){
+      console.log(data);
       setLocation(data.name);
       setCountry(data.sys.country);
       setTemperature(data.main.temp);
@@ -29,28 +32,48 @@ const HeroPage=()=> {
       setVisibility(data.visibility);
       setPressure(data.main.pressure);
       setClouds(data.clouds.all);
-
+      setError(null);
+      } else{
+       setError('This place is not available or not found. Please try another city.');
+      }
     }
-    getWeatherData();
+
+  useEffect( ()=>{
+    getWeatherData(location || 'kadapa');
   },[])
+
+  const handleInputSearch=(e)=>{
+    if (e.key === 'Enter') {
+      const city = e.target.value;
+      if(city){
+        getWeatherData(city)
+        e.target.value = ''; 
+      }
+    }
+  }
 
 
   return (
     <>
+    <div className='h-fit'>
+      <input type='search' 
+    placeholder='Search for any city' 
+    className='w-60 border border-slate-50 text-slate-50 ml-10 mt-10 h-10 rounded-lg px-5 mb-1' 
+    onKeyDown={handleInputSearch} />
 
-    <input type='text' placeholder='Search for any city' className='w-60 border-2 border-slate-200 text-slate-50 ml-10 mt-10' onChange={(e)=>{
-      setLocation(e.target.value);
-    }} />
+    <p className={`text-sm mx-10 pt-3 text-red-500 error-msg ${error ? 'visible' : ''}`}>
+  {error || '\u00A0'}
+</p>
+    
 
-    <div className="bg-transparent min-h-screen px-4 py-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto h-fit">
+      </div>
+    <div className="bg-transparent min-h-screen px-4 py-2">
+       
         
         {/* Hero Weather Display */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-3 mb-6">
-            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-            <span className="text-sm font-medium text-gray-400 tracking-wide uppercase">Live Weather</span>
-          </div>
+          
           
           <h1 className="text-8xl md:text-9xl font-light text-gray-100 mb-4 tracking-tight">
             {Math.round(temperature)}°

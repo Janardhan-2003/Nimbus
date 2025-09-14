@@ -49,7 +49,7 @@ A modern, responsive weather application built with React and Express.js that pr
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/weather-application.git
+   git clone https://github.com/janardhan-2003/weather-application.git
    cd weather-application
    ```
 
@@ -131,15 +131,7 @@ weather-application/
    - Cloud cover percentage
 3. **Real-time Updates**: The status indicator shows when the data was last updated
 
-## 🌐 API Endpoints
 
-### Backend API
-
-- `GET /weather?city={cityName}` - Fetch weather data for a specific city
-
-**Example:**
-```bash
-curl "http://localhost:5000/weather?city=London"
 ```
 
 ## 🎨 Design Features
@@ -190,21 +182,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **J R Kokatam**
 - Email: [jrkokatam.09@gmail.com](mailto:jrkokatam.09@gmail.com)
-- GitHub: [@yourusername](https://github.com/yourusername)
 
-## 🙏 Acknowledgments
 
-- [OpenWeather](https://openweathermap.org/) for providing the weather API
-- [Lucide](https://lucide.dev/) for the beautiful icons
-- [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
-- [Vite](https://vitejs.dev/) for the fast build tool
-
-## 📊 Project Status
-
-![GitHub last commit](https://img.shields.io/github/last-commit/yourusername/weather-application)
-![GitHub issues](https://img.shields.io/github/issues/yourusername/weather-application)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/yourusername/weather-application)
-![GitHub stars](https://img.shields.io/github/stars/yourusername/weather-application)
 
 ---
 

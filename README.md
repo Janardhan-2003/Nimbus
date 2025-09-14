@@ -49,7 +49,7 @@ A modern, responsive weather application built with React and Express.js that pr
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/janardhan-2003/weather-application.git
+   git clone https://github.com/yourusername/weather-application.git
    cd weather-application
    ```
 
@@ -131,7 +131,15 @@ weather-application/
    - Cloud cover percentage
 3. **Real-time Updates**: The status indicator shows when the data was last updated
 
+## 🌐 API Endpoints
 
+### Backend API
+
+- `GET /weather?city={cityName}` - Fetch weather data for a specific city
+
+**Example:**
+```bash
+curl "http://localhost:5000/weather?city=London"
 ```
 
 ## 🎨 Design Features
@@ -182,6 +190,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **J R Kokatam**
 - Email: [jrkokatam.09@gmail.com](mailto:jrkokatam.09@gmail.com)
+
+
 
 
 
